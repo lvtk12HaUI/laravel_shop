@@ -1,0 +1,75 @@
+
+p.errMess{
+    margin-top: 5px;
+    margin-bottom: -10px;
+    padding-left: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: red;
+}
+
+p.notiErr{
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: red;
+}
+
+
+
+h5.txt-ct{
+    text-align: center;
+}
+
+div.font-style{
+    color: #3a3b45;
+}
+
+.f-size{
+    font-size: 0.8rem;
+}
+
+.w-1{
+    width: 50px;
+}
+
+.w-2{
+    width: 100px;
+}
+
+.w-3{
+    width: 200px;
+}
+
+.w-4{
+    width: 300px;
+}
+
+.bd-r-none{
+    border-right: none !important;
+}
+
+input.btn.btn-primary.btn-user.btn-block{
+    font-size: 1rem;
+}
+
+.p-5 {
+    padding-top: -1rem !important;
+}
+
+.t-center{
+    text-align: center !important;
+}
+
+.m-r-20{
+    margin-right: 20px;
+}
+
+.notification{
+    margin-bottom: 0px !important;
+    margin-top: 1rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    display: inline !important;
+}
