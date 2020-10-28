@@ -9,7 +9,7 @@ class CategoryProduct extends Model
     protected $table = "tbl_category_product";
     protected $primaryKey = "category_id";
     protected $fillable = [
-        'category_name', 'category_desc', 'category_status', 'created_at', 'updated_at'
+        'category_name', 'category_desc', 'category_status'
     ];
 
 }

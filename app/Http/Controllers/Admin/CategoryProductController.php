@@ -8,6 +8,7 @@ use App\Models\CategoryProduct as Category;
 
 class CategoryProductController extends Controller
 {
+    
     public function viewAddCategoryProduct(){
         return view('backend.pages.add_category_product');
     }
@@ -72,7 +73,5 @@ class CategoryProductController extends Controller
             }
         }
     }
-
-
 
 }

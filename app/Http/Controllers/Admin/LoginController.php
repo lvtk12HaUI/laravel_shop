@@ -11,11 +11,11 @@ use App\Http\Requests\StoreRegister;
 class LoginController extends Controller
 {
     public function viewLogin(){
-        return view('backend.pages.login');
+        return view('backend.login');
     }
 
     public function viewRegister(){
-        return view('backend.pages.register');
+        return view('backend.register');
     }
 
     public function handleLogin(Request $request){

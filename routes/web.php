@@ -40,10 +40,18 @@ Route::group([
     //Route category product
     Route::get('add-categoey-product','CategoryProductController@viewAddCategoryProduct')->name('viewAddCategoryProduct');
     Route::get('list-categoey-product','CategoryProductController@viewListCategoryProduct')->name('viewListCategoryProduct');
-    Route::post('add-category-product', 'CategoryProductController@handleAddCategoryProduct')->name('handleAddCategoryProduct');
+    Route::post('handle-add-category-product', 'CategoryProductController@handleAddCategoryProduct')->name('handleAddCategoryProduct');
     Route::get('del-category-product/{category_id}', 'CategoryProductController@handleDelCategoryProduct')->name('handleDelCategoryProduct');
     Route::get('edit-category-product/{category_id}', 'CategoryProductController@viewEditCategoryProduct')->name('viewEditCategoryProduct');
     Route::post('handle-edit-category-product/{category_id}', 'CategoryProductController@handleEditCategoryProduct')->name('handleEditCategoryProduct');
+
+    //Route brand product
+    Route::get('add-brand-product','BrandProductController@viewAddBrandProduct')->name('viewAddBrandProduct');
+    Route::get('list-brand-product','BrandProductController@viewListBrandProduct')->name('viewListBrandProduct');
+    Route::post('handle-add-brand-product', 'BrandProductController@handleAddBrandProduct')->name('handleAddBrandProduct');
+    Route::get('del-brand-product/{brand_id}', 'BrandProductController@handleDelBrandProduct')->name('handleDelBrandProduct');
+    Route::get('edit-brand-product/{brand_id}', 'BrandProductController@viewEditBrandProduct')->name('viewEditBrandProduct');
+    Route::post('handle-edit-brand-product/{brand_id}', 'BrandProductController@handleEditBrandProduct')->name('handleEditBrandProduct');
     
     
 });

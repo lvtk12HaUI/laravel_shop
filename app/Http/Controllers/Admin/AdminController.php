@@ -10,7 +10,7 @@ use App\Admin;
 class AdminController extends Controller
 {
     public function viewDashboard(){
-        return view('backend.pages.dashboard');
+        return view('backend.dashboard');
     }
 
 }
