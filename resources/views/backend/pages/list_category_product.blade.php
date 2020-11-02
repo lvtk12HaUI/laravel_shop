@@ -23,7 +23,7 @@
               <th class="w-4 bd-r-none">Tên danh mục</th>
               <th class="bd-r-none">Mô tả</th>
               <th class="w-2 t-center bd-r-none">Hiển thị</th>
-              <th class="w-2"></th>
+              <th class="w-1"></th>
             </tr>
           </thead>
           <tbody>

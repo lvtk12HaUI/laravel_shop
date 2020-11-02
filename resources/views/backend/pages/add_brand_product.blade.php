@@ -26,7 +26,7 @@
                     <label for="status">Hiển thị</label>
                     <select name="status" id="status" class="form-control">
                       <option value="0" selected>Ẩn</option>
-                      <option value="1">Hiển thị</option>
+                      <option value="1" @if(old('status') == 1) selected @endif>Hiển thị</option>
                     </select>
                   </div>
                   <input type="submit" class="btn btn-primary btn-user btn-block" value="Thêm thương hiệu">

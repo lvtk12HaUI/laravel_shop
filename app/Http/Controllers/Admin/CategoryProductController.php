@@ -38,7 +38,6 @@ class CategoryProductController extends Controller
                 'category_name' => $request->category_product_name,
                 'category_desc' => $request->category_product_desc,
                 'category_status' => $request->status,
-                'created_at' => date('Y-m-d H:i:s')
             ];
             if(Category::create($data)){
                return redirect()->route("viewListCategoryProduct")->with("notification","Thêm danh mục thành công");
@@ -47,8 +46,10 @@ class CategoryProductController extends Controller
     }
 
     public function handleDelCategoryProduct($category_id){
-        if(Category::destroy($category_id)){
-            return redirect()->route('viewListCategoryProduct')->with('notification','Xóa danh mục thành công');
+        if(Category::find($category_id)){
+            if(Category::destroy($category_id)){
+                return redirect()->route('viewListCategoryProduct')->with('notification','Xóa danh mục thành công');
+            }
         }
         else{
             return redirect()->route('viewListCategoryProduct')->with('notification','Danh mục không tồn tại');

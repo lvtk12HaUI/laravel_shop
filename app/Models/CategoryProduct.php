@@ -8,8 +8,11 @@ class CategoryProduct extends Model
 {
     protected $table = "tbl_category_product";
     protected $primaryKey = "category_id";
+    public $timestamps = false;
     protected $fillable = [
         'category_name', 'category_desc', 'category_status'
     ];
-
+    public function products(){
+        return $this->hasMany('App\Models\Product');
+    } 
 }

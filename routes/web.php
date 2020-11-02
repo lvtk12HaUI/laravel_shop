@@ -38,8 +38,8 @@ Route::group([
     Route::get('dashboard','AdminController@viewDashboard')->name('viewDashboard');
     Route::post('handle-logout','LoginController@handleLogout')->name('handleLogout');
     //Route category product
-    Route::get('add-categoey-product','CategoryProductController@viewAddCategoryProduct')->name('viewAddCategoryProduct');
-    Route::get('list-categoey-product','CategoryProductController@viewListCategoryProduct')->name('viewListCategoryProduct');
+    Route::get('add-category-product','CategoryProductController@viewAddCategoryProduct')->name('viewAddCategoryProduct');
+    Route::get('list-category-product','CategoryProductController@viewListCategoryProduct')->name('viewListCategoryProduct');
     Route::post('handle-add-category-product', 'CategoryProductController@handleAddCategoryProduct')->name('handleAddCategoryProduct');
     Route::get('del-category-product/{category_id}', 'CategoryProductController@handleDelCategoryProduct')->name('handleDelCategoryProduct');
     Route::get('edit-category-product/{category_id}', 'CategoryProductController@viewEditCategoryProduct')->name('viewEditCategoryProduct');
@@ -52,6 +52,14 @@ Route::group([
     Route::get('del-brand-product/{brand_id}', 'BrandProductController@handleDelBrandProduct')->name('handleDelBrandProduct');
     Route::get('edit-brand-product/{brand_id}', 'BrandProductController@viewEditBrandProduct')->name('viewEditBrandProduct');
     Route::post('handle-edit-brand-product/{brand_id}', 'BrandProductController@handleEditBrandProduct')->name('handleEditBrandProduct');
+
+    //Route  product
+    Route::get('add-product','ProductController@viewAddProduct')->name('viewAddProduct');
+    Route::get('list-product','ProductController@viewListProduct')->name('viewListProduct');
+    Route::post('handle-add-product', 'ProductController@handleAddProduct')->name('handleAddProduct');
+    Route::get('del-product/{product_id}', 'ProductController@handleDelProduct')->name('handleDelProduct');
+    // Route::get('edit-product/{product_id}', 'ProductController@viewEditProduct')->name('viewEditProduct');
+    // Route::post('handle-edit-product/{product_id}', 'ProductController@handleEditProduct')->name('handleEditProduct');
     
     
 });
