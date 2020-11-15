@@ -34,12 +34,12 @@
                 <tr>
                   <td class="bd-r-none">{{$key + 1}}</td>
                   <td class="bd-r-none">{{$val->product_name}}</td>
-                  <td class="bd-r-none">{{number_format($val->category_price,0,'',',')}}</td>
+                  <td class="bd-r-none">{{$val->product_price}}</td>
                   <td class="bd-r-none"><img src="uploads/product/{{$val->product_image}}" width="100px" height="auto"></td>
                   <td class="bd-r-none">{{$val->category()->first()->category_name}}</td>
                   <td class="bd-r-none">{{$val->brand()->first()->brand_name}}</td>
                   <td class="t-center bd-r-none">
-                    @if ($val->category_status == 1)
+                    @if ($val->product_status == 1)
                       <span class="active m-r-20" ui-toggle-class="">
                         <i class="fas fa-thumbs-up text-success text-active"></i>
                       </span>
@@ -50,10 +50,10 @@
                     @endif
                   </td>
                   <td class="t-center">
-                    <a href="{{route("viewEditCategoryProduct",$val->category_id)}}" class="active m-r-20" ui-toggle-class="">
+                    <a href="{{route("viewEditProduct",$val->product_id)}}" class="active m-r-20" ui-toggle-class="">
                       <i class="fas fa-edit text-success text-active"></i>
                     </a>
-                    <a href="{{route("handleDelProduct",$val->product_id)}}" class="active" ui-toggle-class="" onclick="return del_category_product('{{$val['category_name']}}')">
+                    <a href="{{route("handleDelProduct",$val->product_id)}}" class="active" ui-toggle-class="" onclick="return del_category_product('{{$val['product_name']}}')">
                         <i class="fa fa-times text-danger text"></i>
                     </a>
                   </td>
@@ -72,10 +72,10 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>  
-    {{-- <script type="text/javascript">
-      function del_category_product(category_name){
-        return confirm("Bạn muốn xóa danh mục "+ category_name);
+    <script type="text/javascript">
+      function del_category_product(product_name){
+        return confirm("Bạn muốn xóa sản phẩm "+ product_name);
       }
-    </script> --}}
+    </script>
   @endpush
 @endsection

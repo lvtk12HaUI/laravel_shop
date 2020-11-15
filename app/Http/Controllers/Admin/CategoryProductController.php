@@ -58,20 +58,18 @@ class CategoryProductController extends Controller
 
     public function handleEditCategoryProduct(Request $request, $category_id){
         $data = $request->all();
+        $category_name_old = Category::find($category_id)->category_name;
         $checkCategory = Category::where('category_name',$data['category_product_name'])->first();
-
-        if($checkCategory && $checkCategory->category_name != $data['category_product_name']){
+        if($checkCategory && $category_name_old != $data['category_product_name']){
             return redirect()->back()->with('notification','Tên danh mục đã tồn tại');
         }
         else{
-            if(Category::where('category_id',$category_id)->update([
+            Category::where('category_id',$category_id)->update([
                 'category_name'=>$data['category_product_name'],
                 'category_desc'=>$data['category_product_desc'],
                 'category_status' => $data['status']
-                ])
-            ){
-                return redirect()->route('viewListCategoryProduct')->with('notification','Cập nhật danh mục thành công');
-            }
+            ]);
+            return redirect()->route('viewListCategoryProduct')->with('notification','Cập nhật danh mục thành công');
         }
     }
 

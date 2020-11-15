@@ -58,20 +58,18 @@ class BrandProductController extends Controller
 
     public function handleEditbrandProduct(Request $request, $brand_id){
         $data = $request->all();
+        $brand_name_old = brand::find($brand_id)->brand_name;
         $checkbrand = brand::where('brand_name',$data['brand_product_name'])->first();
-
-        if($checkbrand && $checkbrand->brand_name != $data['brand_product_name']){
+        if($checkbrand && $brand_name_old != $data['brand_product_name']){
             return redirect()->back()->with('notification','Tên danh mục đã tồn tại');
         }
         else{
-            if(brand::where('brand_id',$brand_id)->update([
-                'brand_name'=>$data['brand_product_name'],
-                'brand_desc'=>$data['brand_product_desc'],
+            brand::where('brand_id',$brand_id)->update([
+                'brand_name' => $data['brand_product_name'],
+                'brand_desc' => $data['brand_product_desc'],
                 'brand_status' => $data['status']
-                ])
-            ){
-                return redirect()->route('viewListBrandProduct')->with('notification','Cập nhật thương hiệu thành công');
-            }
+            ]);
+            return redirect()->route('viewListBrandProduct')->with('notification','Cập nhật thương hiệu thành công');
         }
     }
 

@@ -58,8 +58,8 @@ Route::group([
     Route::get('list-product','ProductController@viewListProduct')->name('viewListProduct');
     Route::post('handle-add-product', 'ProductController@handleAddProduct')->name('handleAddProduct');
     Route::get('del-product/{product_id}', 'ProductController@handleDelProduct')->name('handleDelProduct');
-    // Route::get('edit-product/{product_id}', 'ProductController@viewEditProduct')->name('viewEditProduct');
-    // Route::post('handle-edit-product/{product_id}', 'ProductController@handleEditProduct')->name('handleEditProduct');
+    Route::get('edit-product/{product_id}', 'ProductController@viewEditProduct')->name('viewEditProduct');
+    Route::post('handle-edit-product/{product_id}', 'ProductController@handleEditProduct')->name('handleEditProduct');
     
     
 });
