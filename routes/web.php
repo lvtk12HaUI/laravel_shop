@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('admin/login');
-});
+// Route::get('/', function () {
+//     return view("frontend.home");
+// });
+
+Route::get('/','Frontend\HomeController@index')->name('index');
 
 Route::group([
     'prefix' => 'admin',
@@ -63,6 +65,8 @@ Route::group([
     
     
 });
+
+
  
 
 // Auth::routes();

@@ -47,8 +47,14 @@ class CategoryProductController extends Controller
 
     public function handleDelCategoryProduct($category_id){
         if(Category::find($category_id)){
-            if(Category::destroy($category_id)){
-                return redirect()->route('viewListCategoryProduct')->with('notification','Xóa danh mục thành công');
+            if(Category::find($category_id)->products){
+                return redirect()->back()->with('notification','Danh mục có sản phẩm không thể xóa');
+                
+            }
+            else{
+                if(Category::destroy($category_id)){
+                    return redirect()->route('viewListCategoryProduct')->with('notification','Xóa danh mục thành công');
+                }
             }
         }
         else{

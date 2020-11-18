@@ -47,8 +47,14 @@ class BrandProductController extends Controller
 
     public function handleDelBrandProduct($brand_id){
         if(Brand::find($brand_id)){
-            if(brand::destroy($brand_id)){
-                return redirect()->route('viewListBrandProduct')->with('notification','Xóa thương hiệu thành công');
+            if(Brand::find($brand_id)->products){
+                return redirect()->back()->with('notification','Thương hiệu có sản phẩm không thể xóa');
+                
+            }
+            else{
+                if(brand::destroy($brand_id)){
+                    return redirect()->back()->with('notification','Xóa thương hiệu thành công');
+                }
             }
         }
         else{

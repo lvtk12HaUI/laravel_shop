@@ -13,6 +13,6 @@ class BrandProduct extends Model
         'brand_name', 'brand_desc', 'brand_status'
     ];
     public function products(){
-        return $this->hasMany('App\Models\Product');
+        return $this->hasMany('App\Models\Product','brand_id');
     } 
 }

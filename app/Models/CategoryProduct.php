@@ -13,6 +13,6 @@ class CategoryProduct extends Model
         'category_name', 'category_desc', 'category_status'
     ];
     public function products(){
-        return $this->hasMany('App\Models\Product');
+        return $this->hasMany('App\Models\Product','category_id');
     } 
 }
